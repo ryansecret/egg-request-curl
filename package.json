@@ -27,6 +27,6 @@
     ]
   },
   "dependencies": {
-    "node_request_curl": "^1.6.0"
+    "node_request_curl": "^1.8.0"
   }
 }
