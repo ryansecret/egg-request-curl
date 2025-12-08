@@ -11,6 +11,10 @@
   "version": "1.3.0",
   "description": "Egg plugin to log HTTP/HTTPS requests as curl for debugging",
   "main": "app.js",
+  "files": [
+    "app.js",
+    "config"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
@@ -18,11 +22,27 @@
     "precommit": "lint-staged"
   },
   "author": "chenjingnan@jd.com",
-  "license": "Apache",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryansecret/egg-request-curl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryansecret/egg-request-curl/issues"
+  },
+  "homepage": "https://github.com/ryansecret/egg-request-curl#readme",
   "engines": {
     "node": ">= 8.6.0",
     "npm": ">= 5.6.0"
   },
+  "keywords": [
+    "egg",
+    "egg-plugin",
+    "curl",
+    "logging",
+    "http",
+    "debug"
+  ],
   "lint-staged": {
     "*.{js}": [
       "eslint --fix",
