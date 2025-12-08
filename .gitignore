@@ -190,3 +190,7 @@ dist
 jcloud-browser.js
 .cache
 package-lock.json
+.npmrc
+pnpm-lock.yaml
+pnpm-workspace.yaml
+.joycode/prompt.json
