@@ -57,34 +57,7 @@ module.exports = app => {
       // 使用异步处理避免阻塞主线程
       setImmediate(() => {
         // 构建结构化日志对象
-        const logRecord = {
-          timestamp: record.time.toISOString(),
-          curl: record.request,
-          response: record.response ? record.response.substring(0, 200) : '',
-          hasError: !!record.error,
-        };
-
-        // 根据是否有错误选择日志级别
-        if (record.error) {
-          try {
-            const errorObj = JSON.parse(record.error);
-            logger.error(`[HTTP Request Failed] ${errorObj.message}`, {
-              ...logRecord,
-              error: errorObj,
-              fullCurl: record.request,
-              fullResponse: record.response,
-            });
-          } catch (e) {
-            // 如果错误信息不是 JSON 格式，直接记录
-            logger.error(`[HTTP Request Failed] ${record.error}`, {
-              ...logRecord,
-              error: record.error,
-            });
-          }
-        } else {
-          // 正常请求日志
-          logger.info(logRecord);
-        }
+      logger.info(`${record.request} \n ${record.error || record.response} \n`)
       });
     });
 
