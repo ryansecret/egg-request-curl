@@ -22,7 +22,7 @@ module.exports = (appInfo) => {
   }
   
   if(process.env.local) {
-    logBase = path.join(appInfo.baseDir, '../log');
+    logBase = path.join(appInfo.baseDir, './log');
   }
 
   return {
